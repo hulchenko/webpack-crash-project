@@ -10,7 +10,7 @@ create src folder (for all of the working files)
 
 create dist folder (for all of the webpack compiled files from working files)
 
-create and configure webpack.config.js (for node.js to initialize)
+create and configure webpack.config.js (for node.js to initialize)(init setup usually described on the website)
 
 initialize webpack: 'webpack'
 
@@ -26,4 +26,15 @@ run 'npm run dev'(expanded) OR 'npm run build'(compressed) & 'node dist/bundle.j
 
 run 'npm install --save-dev html-webpack-plugin' to install HTML plugin
 
-in package.json add configuration for HTML plugin
+in package.json add configuration for HTML plugin (it will auto create indicated html files, or use those indicated as a template)
+
+run 'npm install --save jquery'
+
+to use jquery or any other library we need to import it. in this example we will import into './modules/header.component.js', same place we will code in.
+
+to let npm automatically watch and apply changes, we've created script: 'dev:watch": "webpack --mode development --watch'. To run 'npm run dev:watch' and the process will run continuously and update on save. (ctrl + C to exit)
+
+we can also use pre-processors(loaders) with webpack, for example: 'npm install --save-dev css-loader'(to receive css code, but NOT to apply it)
+
+then, to apply CSS code: 'npm install --save-dev style-loader'
+

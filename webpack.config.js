@@ -13,4 +13,12 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/i, 
+        use: ['style-loader', 'css-loader'] //webpack runs array from right to left. First it will catch all code from css-loader, then apply it with style-loader.
+      }
+    ]
+  }
 };
