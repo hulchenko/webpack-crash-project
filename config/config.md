@@ -17,3 +17,13 @@ initialize webpack: 'webpack'
 check dist folder for bundle.js to appear
 
 test working directory with 'node dist/bundle.js' command
+
+add: "dev": "webpack --mode development" and "build": "webpack --mode production" to package.json to run commands: 'npm run build' or 'npm run dev' to switch between expanded and compressed code inside bundle.js
+
+create /modules folder with configured module files to import into main js file (just like Sass)
+
+run 'npm run dev'(expanded) OR 'npm run build'(compressed) & 'node dist/bundle.js' to test connectivity and performance
+
+run 'npm install --save-dev html-webpack-plugin' to install HTML plugin
+
+in package.json add configuration for HTML plugin
