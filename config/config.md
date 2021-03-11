@@ -36,5 +36,18 @@ to let npm automatically watch and apply changes, we've created script: 'dev:wat
 
 we can also use pre-processors(loaders) with webpack, for example: 'npm install --save-dev css-loader'(to receive css code, but NOT to apply it)
 
-then, to apply CSS code: 'npm install --save-dev style-loader'
+then, to apply CSS code: 'npm install --save-dev style-loader'.
 
+webpack recognizes imports inside CSS just like Sass. Also css path needs to be indicated inside index.js file (default js file). Applies style inside HTML head element.
+
+in order for css to be compiled into final distribution folder, as a separate file, just like index.html, we would need to add css extract plugin: 'npm install --save-dev mini-css-extract-plugin'
+
+then, make changes inside webpack.config.js, change 'style-loader' to 'MiniCssExtractPlugin.loader' and add extra line to plugins section within as well. This optimizes code and creates 1 reference line in HTML instead of big <style> list in <head>
+
+to minimize css file, just like we do with 'npm run build', we need to: 'npm install css-minimizer-webpack-plugin --save-dev'
+
+update webpack.config.js file with documentation provided on webpack website
+
+after this, our js optimizer will reset and will not work by default, we would have to add a new JS optimizer plugin: 'npm install terser-webpack-plugin --save-dev'; update our webpack.config.js and run to test 'npm run build' to see compressed results on css/html/js files.
+
+P.S. in optimization field, we can keep 'minimize: true' to keep it minimized at all times. This is overwriting 'npm run dev'
