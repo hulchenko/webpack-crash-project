@@ -74,3 +74,14 @@ To work with pre-processors Less and Sass:
 #1 for Less: 'npm install less less-loader --save-dev'.Update webpack.config.js(important to indicate css extract plugin) and add index.less into index.js file.
 #2 for Sass: 'npm install node-sass' and 'npm install sass-loader sass webpack --save-dev'
 Update webpack.config.js and index.sass into index.js file.
+
+To work with React:
+#1 'npm i -S react react-dom'
+#2 create App.js file to code React inside
+#3 input following lines inside index.js:
+import React from 'react';
+import { render } from 'react-dom';
+render(<App />, document.getElementById('app'));
+#4 add presets to Babel for React readability: 'npm install --save-dev @babel/preset-react'.
+#5 inside babel.config.json file add presets config: "@babel/preset-react"
+#6 jQuery and React don't run together from different files without causing issues. To run React - we need to replace jQuery components into App.js, where React code is.
