@@ -55,11 +55,17 @@ P.S. in optimization field, we can keep 'minimize: true' to keep it minimized at
 'npm install -D webpack-dev-server' is used as local server to dynamically update browser's page to reflect changes, similar to 'dev:watch' script that we've created(?)
 
 After, need to update webpack.config.js:
-        devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 4200,
-  },
+devServer: {
+contentBase: path.join(\_\_dirname, 'dist'),
+compress: true,
+port: 4200,
+},
 
-After, need to update package.json, inside 'script' object: 
-    "start:dev": "webpack serve --open" < '--open' is to open browser's window right away.
+After, need to update package.json, inside 'script' object:
+"start:dev": "webpack serve --open" < '--open' is to open browser's window right away.
+
+In order for our code to be compatible with ALL devices, including old ones that read only up until ES5, we will setup Babel tool. Our ES6 code will get compiled into ES5 for general compatibility.
+
+To setup Babel, run: 'npm install --save-dev babel-loader @babel/core' and 'npm install @babel/preset-env --save-dev'
+
+Follow Babel's guideline for webpack to finalize installation
