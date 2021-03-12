@@ -51,3 +51,15 @@ update webpack.config.js file with documentation provided on webpack website
 after this, our js optimizer will reset and will not work by default, we would have to add a new JS optimizer plugin: 'npm install terser-webpack-plugin --save-dev'; update our webpack.config.js and run to test 'npm run build' to see compressed results on css/html/js files.
 
 P.S. in optimization field, we can keep 'minimize: true' to keep it minimized at all times. This is overwriting 'npm run dev'
+
+'npm install -D webpack-dev-server' is used as local server to dynamically update browser's page to reflect changes, similar to 'dev:watch' script that we've created(?)
+
+After, need to update webpack.config.js:
+        devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 4200,
+  },
+
+After, need to update package.json, inside 'script' object: 
+    "start:dev": "webpack serve --open" < '--open' is to open browser's window right away.
