@@ -69,3 +69,8 @@ In order for our code to be compatible with ALL devices, including old ones that
 To setup Babel, run: 'npm install --save-dev babel-loader @babel/core' and 'npm install @babel/preset-env --save-dev'
 
 Follow Babel's guideline for webpack to finalize installation
+
+To work with pre-processors Less and Sass:
+#1 for Less: 'npm install less less-loader --save-dev'.Update webpack.config.js(important to indicate css extract plugin) and add index.less into index.js file.
+#2 for Sass: 'npm install node-sass' and 'npm install sass-loader sass webpack --save-dev'
+Update webpack.config.js and index.sass into index.js file.

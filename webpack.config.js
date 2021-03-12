@@ -27,11 +27,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
+        test: /\.css$/i, //css compilator
         use: [MiniCssExtractPlugin.loader, 'css-loader'], //webpack runs array from right to left. First it will catch all code from css-loader, then apply it with style-loader.
       },
       {
-        test: /\.m?js$/,
+        test: /\.m?js$/, //js compilator
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -39,6 +39,14 @@ module.exports = {
             presets: ['@babel/preset-env'],
           },
         },
+      },
+      {
+        test: /\.less$/i, //less compilator
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
+      },
+      {
+        test: /\.s[ac]ss$/i, //sass or scss compilator
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
     ],
   },
