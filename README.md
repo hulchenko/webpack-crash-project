@@ -5,4 +5,4 @@ Platform environment: Node.js
 
 Tool: Webpack
 
-Config file: ./config/config.md
+Config file: https://github.com/hulchenko/webpack-crash-project/blob/main/config/config.md
