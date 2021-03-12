@@ -24,6 +24,11 @@ module.exports = {
       filename: 'style.css',
     }),
   ],
+
+  resolve: {
+    extensions: ['.js', '.ts'],
+  },
+
   module: {
     rules: [
       {
@@ -31,7 +36,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader'], //webpack runs array from right to left. First it will catch all code from css-loader, then apply it with style-loader.
       },
       {
-        test: /\.m?js$/, //js compilator
+        test: /\.(m?js|ts)$/, //js compilator
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',

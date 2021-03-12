@@ -85,3 +85,11 @@ render(<App />, document.getElementById('app'));
 #4 add presets to Babel for React readability: 'npm install --save-dev @babel/preset-react'.
 #5 inside babel.config.json file add presets config: "@babel/preset-react"
 #6 jQuery and React don't run together from different files without causing issues. To run React - we need to replace jQuery components into App.js, where React code is.
+
+To work with TypeScript:
+#1 'npm install --save-dev @babel/preset-typescript'
+#2 add presets to babel.config.json: "@babel/preset-typescript"
+#3 update webpack.config.js rules, add ts to js or separately.
+#4 create TS file
+#5 add import inside index.js
+#6 inside webpack.config.js, add separate field 'extensions', where we can add both .js and .ts extensions to avoid using them upon import inside index.js
